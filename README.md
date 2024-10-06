@@ -124,6 +124,22 @@ SELECT EmployeeID, FirstName, LastName
 FROM Employees
 WHERE DepartmentID IN (SELECT DepartmentID FROM Departments WHERE LocationID = 1700);
 ```
+**A Common Table Expression (CTE)**
+
+a temporary result set that you can reference within a `SELECT`, `INSERT`,` UPDATE`, or `DELETE` statement. CTEs are particularly useful for simplifying complex queries and improving readability. 
+Recursive CTE
+CTEs can also be recursive, which is useful for hierarchical data, such as organizational charts or tree structures.
+Basic Syntax
+```sql
+WITH cte_name AS (
+    SELECT column1, column2
+    FROM table_name
+    WHERE condition
+)
+SELECT column1, column2
+FROM cte_name
+WHERE another_condition;
+```
 
 Joins 
 
